@@ -33,7 +33,7 @@ class _LoginDemoState extends State<LoginDemo> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 100.0),
               child: Center(
                 child: Container(
                     width: 200,
@@ -66,7 +66,7 @@ class _LoginDemoState extends State<LoginDemo> {
                     hintText: 'Enter secure password'),
               ),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
@@ -80,7 +80,7 @@ class _LoginDemoState extends State<LoginDemo> {
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => HomePage()));
@@ -94,7 +94,7 @@ class _LoginDemoState extends State<LoginDemo> {
             SizedBox(
               height: 130,
             ),
-            Text('New User? Create Account')
+            Text('New User? Create Account'),
           ],
         ),
       ),

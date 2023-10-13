@@ -1,6 +1,20 @@
 import 'package:flutter/material.dart';
+//import 'package:pflutterdemoproject/LoginWithAPI.dart';
+//import 'package:http/http.dart';
+//import 'package:pflutterdemoproject/HomePage.dart';
+//import 'HomePage.dart';
+//import 'LoginWithAPI.dart'; tranfer mate
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'UserList.dart';
 
-import 'HomePage.dart';
+// temaparary list mate list library
+
+
+
+
+
 
 void main() {
   runApp(MyApp());
@@ -15,7 +29,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class LoginDemo extends StatefulWidget {
   @override
   _LoginDemoState createState() => _LoginDemoState();
@@ -27,7 +40,7 @@ class _LoginDemoState extends State<LoginDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: const Text("Login Page"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -44,7 +57,7 @@ class _LoginDemoState extends State<LoginDemo> {
                     child: Image.asset('asset/images/flutter-logo.png')),
               ),
             ),
-            Padding(
+            const Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
@@ -54,9 +67,9 @@ class _LoginDemoState extends State<LoginDemo> {
                     hintText: 'Enter valid email id as abc@gmail.com'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+            const Padding(
+              padding:
+                  EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 obscureText: true,
@@ -70,7 +83,7 @@ class _LoginDemoState extends State<LoginDemo> {
               onPressed: () {
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
-              child: Text(
+              child: const Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.blue, fontSize: 15),
               ),
@@ -82,19 +95,21 @@ class _LoginDemoState extends State<LoginDemo> {
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => HomePage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) {
+                        return  UserList(title: '',);
+                      }));
                 },
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 130,
             ),
-            Text('New User? Create Account'),
+            const Text('New User? Create Account'),
           ],
         ),
       ),
